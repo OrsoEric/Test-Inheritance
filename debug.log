@@ -1,0 +1,43 @@
+Start Debug!
+-->> "main" |
+	-->> "make_human" |
+		Constructing parent class
+		-->> "Human" | gender: male, age: 42
+			-->> "set_gender" | gender: male
+			<<-- "set_gender" |
+			-->> "set_age" | age: 42
+			<<-- "set_age" |
+			-->> "set_name" | name: Bob
+			<<-- "set_name" |
+		<<-- "Human" |
+		-->> "show" |
+		<<-- "show" |
+	<<-- "make_human" |
+	-->> "~Human" |
+	<<-- "~Human" |
+	-->> "make_student" |
+		Constructing derived class
+		-->> "Human" | gender: male, age: 23
+			-->> "set_gender" | gender: male
+			<<-- "set_gender" |
+			-->> "set_age" | age: 23
+			<<-- "set_age" |
+			-->> "set_name" | name: Meruem
+			<<-- "set_name" |
+		<<-- "Human" |
+		-->> "Student" | gender: male, age: 23, name: Meruem, id: 123456
+			-->> "set_id" | id: 123456
+			<<-- "set_id" |
+		<<-- "Student" |
+		-->> "show" |
+			-->> "show" |
+			<<-- "show" |
+		<<-- "show" |
+	<<-- "make_student" |
+	-->> "~Student" |
+	<<-- "~Student" |
+	-->> "~Human" |
+	<<-- "~Human" |
+<<-- "main" |
+
+Debug has Ended!
